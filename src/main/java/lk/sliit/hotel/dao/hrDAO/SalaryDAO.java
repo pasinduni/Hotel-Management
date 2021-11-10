@@ -14,18 +14,18 @@ public interface SalaryDAO extends CrudRepository<Salary,Integer> {
 
     Iterable<Salary> findAllByStateAndDateEquals(boolean c, Date date);
     @Query(value = "select t.employeeID from Salary t where t.state = :state ")
-    Set<Employee> findAllByStateEquals(@Param("state")boolean state);
+    Set<Employee> findAllByStateEquals(@Param("state") boolean state);
 
 
 
     @Query(value = "from Salary t where (t.otHours between :endTime and :startTimes)  and t.date = :date")
-    Iterable<Salary> getAllBetweenDates(@Param("startTimes") Date startTimes, @Param("endTime")Date endTime, @Param("date")Date date);
+    Iterable<Salary> getAllBetweenDates(@Param("startTimes") Date startTimes, @Param("endTime") Date endTime, @Param("date") Date date);
 
     @Query("SELECT SUM(m.otHours) FROM Salary m where  m.employeeID.userId = :userId")
-    double findAllByDateBetweenAndEmployeeID_UserIdEquals(@Param("userId")int userId);
+    double findAllByDateBetweenAndEmployeeID_UserIdEquals(@Param("userId") int userId);
 
     @Query("SELECT SUM(m.hours) FROM Salary m where  m.employeeID.userId = :userId")
-    double findAllByDateBetweenAndEmployeeID_UserIdEqual(@Param("userId")int userId);
+    double findAllByDateBetweenAndEmployeeID_UserIdEqual(@Param("userId") int userId);
 
 
 

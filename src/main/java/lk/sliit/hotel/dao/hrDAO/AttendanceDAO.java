@@ -15,6 +15,6 @@ public interface AttendanceDAO extends CrudRepository<Attendance,Integer> {
     Attendance findTopByOrderByAttendanceIdDesc();
 
     @Query("SELECT SUM(m.overtimeHours) FROM Attendance m where (m.date between  :date and :date1) and m.employeeID.userId = :userId")
-    double findAllByDateBetweenAndEmployeeID_UserIdEquals(@Param("date")Date date, @Param("date1")Date date1, @Param("userId")int userId);
+    double findAllByDateBetweenAndEmployeeID_UserIdEquals(@Param("date") Date date, @Param("date1") Date date1, @Param("userId") int userId);
 
 }
