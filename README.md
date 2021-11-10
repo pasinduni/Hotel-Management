@@ -1,4 +1,3 @@
-# Hotel Management
-#### Year 2 Semester 2 ITP Project
-#### Hotel Management/System Department
- 
+## Hotel Management
+#### Year 2 semester 2 (SLIIT/IT) ITP project
+#### #Hotel Management #System Department
